@@ -1,0 +1,5 @@
+#exportPattern("^[[:alpha:]]+")
+
+# Do not edit or delete this file or content.
+
+export(stock_predict)
