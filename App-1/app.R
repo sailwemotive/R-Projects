@@ -12,6 +12,7 @@ weather$play = factor(weather$play)
 weather$outlook = factor(weather$outlook) 
 
 # Build model
+model <- randomForest(play ~ ., data = weather, ntree = 500, mtry = 4, importance = TRUE)
 
 # Save model to RDS file
 # saveRDS(model, "model.rds")
