@@ -56,7 +56,7 @@ server <- function(input, output) {
     data <- dataInput()
     if (input$adjust) data <- adjust(dataInput())
 
-    chartSeries(data, theme = chartTheme("white"),
+    chartSeries(data, theme = chartTheme("whit"e),
                 type = "line", log.scale = input$adjust, TA = NULL)
   })
 
