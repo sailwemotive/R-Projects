@@ -1,0 +1,5 @@
+question,options,answer
+What is the maximum length of a Python identifier?,"32,26,128,No fixed length is specified.",No fixed length is specified
+Which of the following statements are used in Exception Handling in Python?,"Try, Except, Finally, All of the above",All of the above
+Which of the following concepts is not a part of Python?,"Pointers, Loops, Dynamic Typing, All of the above.",Pointers
+How is a code block indicated in Python?,"Brackets, Indentation, Key, None of the above",Indentation

@@ -1,0 +1,16 @@
+# Packages ----
+library(shiny) # Required to run any Shiny app
+
+setwd('C:/MyFiles/Learning/git/R-Projects/R-shiny/interview_assignments/wemotive/wemotive1')
+
+# Loading data ----
+questionnaire_data <- read.csv('./data/questionnaire.csv')
+questionnaire_data
+# ui.R ----
+ui <- fluidPage()
+
+# server.R ----
+server <- function(input, output) {}
+
+# Run the app ----
+shinyApp(ui = ui, server = server)
