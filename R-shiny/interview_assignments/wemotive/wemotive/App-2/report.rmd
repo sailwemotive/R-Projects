@@ -1,0 +1,47 @@
+---
+title: "Wemotive"
+output: pdf_document
+fontsize: 11pt
+geometry: margin=1in
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(DT)
+```
+### Chart 1
+```{r plot}
+ggplot(cnf.dev.df, aes(x = Corruption.Perceptions.Index,
+                           y = Human.Development.Index, 
+                           color=Region)) + 
+      geom_point(size=3, shape=1,stroke=1.5) +
+      geom_smooth(method=lm, se=FALSE, col='red', size=1) + 
+      geom_text(data = cnf.dev.df,
+                aes(label= subset(cnf.dev.df, HDI.Rank<=20)),
+                label= cnf.dev.df$Country,
+                nudge_x=0.45, nudge_y=0.1,
+                check_overlap=T
+      ) + 
+      ggtitle("Sail kargutkar") + 
+      xlab("Corruption Perceptions") + 
+      ylab("Human Development") + 
+      labs(caption = "Human Development increasing along with corruption.") + 
+      theme_minimal() + 
+      theme(legend.position = "top")
+```
+Below is a scatter plot with the regression line.
+
+### Chart 2
+```{r plot2}
+ggplot(cnf.dev.df, aes(x = Corruption.Perceptions.Index, y = Human.Development.Index, 
+                       fill = Region)) + 
+  geom_boxplot() + 
+  stat_summary(fun = "mean", geom = "point", shape = 8,size = 2, color = "white")
+```
+
+### Chart 3
+```{r}
+library(knitr)
+kable(head(cnf.dev.df))
+```
